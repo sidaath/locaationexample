@@ -6,10 +6,13 @@ import androidx.constraintlayout.solver.widgets.ChainHead;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     public static ArrayList<Child> childList = new ArrayList<>();
+    public static ArrayList<LatLng> locations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

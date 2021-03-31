@@ -8,6 +8,8 @@ import android.util.Log;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -73,10 +75,12 @@ public class GetPointsBackend extends AsyncTask<Void, Child, Void> {
                 int id = jo.getInt("childId");
                 double lat = jo.getDouble("lat");
                 double lon = jo.getDouble("lon");
+                LatLng latLng = new LatLng(lat, lon);
 
                 Child child = new Child(lat, lon, id);
                 publishProgress(child);
-                MainActivity.childList.add(child);
+                //MainActivity.childList.add(child);
+                MainActivity.locations.add(latLng);
                 }
             } catch (JSONException jsonException) {
             jsonException.printStackTrace();
